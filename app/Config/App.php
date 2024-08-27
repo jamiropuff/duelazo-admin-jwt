@@ -24,7 +24,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'http://duelazo.admin/';
+    public $baseURL = 'http://duelazojwt.admin/';
 
     /**
      * --------------------------------------------------------------------------

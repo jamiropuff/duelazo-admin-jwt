@@ -4,10 +4,13 @@ namespace App\Controllers;
 use App\Libraries\JWT;
 use CodeIgniter\API\ResponseTrait;
 
-
 class UserController extends BaseController
 {
+
+    use ResponseTrait;
+
     public function login() {
+    echo "entro a login \n";
 
         $user = $this->request->getPost('usuario');
         $pass = $this->request->getPost('clave');
@@ -17,12 +20,13 @@ class UserController extends BaseController
         //$user = 'gconderos@gmail.com';
         //$pass = 'master12';
 
-        /*
-        echo "user: ".$user."<br>";
-        echo "pass: ".$pass."<br>";
-        echo "identifier: ".$identifier."<br>";
-        echo "web_identifier: ".$web_identifier."<br>";
-        */
+        
+        echo "user: ".$user."\n";
+        echo "pass: ".$pass."\n";
+        echo "identifier: ".$identifier."\n";
+        echo "web_identifier: ".$web_identifier."\n";
+        echo APP_URL.'sessions/login'."\n";
+        
 
         $client = \Config\Services::curlrequest();
 
@@ -63,12 +67,14 @@ class UserController extends BaseController
                         'iat' => time(),   // Fecha/hora de emisión del token
                         'exp' => time() + 3600  // Fecha/hora de expiración del token (1 hora)
                     );
-                    $token_jwt = $jwt->encode($payload);
+                    $token = $jwt->encode($payload);
+
+                    echo $token."\n";
 
                     // Generar la Session
                     $arr_session = array(
                         'user_id' => $body->session->user_id,
-                        'token' => $token_jwt,
+                        'token' => $token,
                         'identifier' => $body->session->device->identifier,
                         'role_id' => $body->session->user->role_id,
                         'name' => $body->session->user->name,
@@ -81,6 +87,7 @@ class UserController extends BaseController
     
                     $session = session();
                     $session->set($arr_session);
+
                     
                     $response = array(
                         'status' => 1,
@@ -110,7 +117,8 @@ class UserController extends BaseController
 
             $response = array(
                 'status' => 0,
-                'message' => 'Usuario o contraseña incorrectos'
+                'message' => 'Usuario o contraseña incorrectos',
+                'error' => $e->getMessage()
 
             );
 

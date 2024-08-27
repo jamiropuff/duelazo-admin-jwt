@@ -77,15 +77,15 @@ const login = () => {
     let user = $("#usuario").val()
     let pass = $("#password").val()
  
-    //console.log(`user: ${user}, pass: ${pass}`)
+    console.log(`user: ${user}, pass: ${pass}`)
  
     $.ajax({
         url: '/login',
         type: 'POST',
         data: { "usuario" : user, "clave" : pass },
         success: function(response){
-            //console.log('success login')
-            //console.log(JSON.parse(response))
+            console.log('success login')
+            console.log(JSON.parse(response))
 
             respuesta = JSON.parse(response)
 
