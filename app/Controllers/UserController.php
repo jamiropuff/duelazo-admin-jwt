@@ -16,12 +16,11 @@ class UserController extends BaseController
 
         //$user = 'gconderos@gmail.com';
         //$pass = 'master12';
-
         
-        echo "user: ".$user."<br>";
-        echo "pass: ".$pass."<br>";
-        echo "identifier: ".$identifier."<br>";
-        echo "web_identifier: ".$web_identifier."<br>";
+        // echo "user: ".$user."<br>";
+        // echo "pass: ".$pass."<br>";
+        // echo "identifier: ".$identifier."<br>";
+        // echo "web_identifier: ".$web_identifier."<br>";
         
 
         $client = \Config\Services::curlrequest();
@@ -45,8 +44,7 @@ class UserController extends BaseController
         
 
             if(isset($body)){
-                //echo "entro a session <br>";
-                
+                // echo "entro a session <br>";
                 
                 if(isset($body->session) && $body->session->user->role_id == 1 || $body->session->user->role_id == 2){
 
