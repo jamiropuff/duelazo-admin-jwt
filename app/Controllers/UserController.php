@@ -17,12 +17,12 @@ class UserController extends BaseController
         //$user = 'gconderos@gmail.com';
         //$pass = 'master12';
 
-        /*
+        
         echo "user: ".$user."<br>";
         echo "pass: ".$pass."<br>";
         echo "identifier: ".$identifier."<br>";
         echo "web_identifier: ".$web_identifier."<br>";
-        */
+        
 
         $client = \Config\Services::curlrequest();
 
@@ -107,6 +107,8 @@ class UserController extends BaseController
     
         } catch (\Exception $e) {
             //exit($e->getMessage());
+
+            //echo $e->getMessage();
 
             $response = array(
                 'status' => 0,
