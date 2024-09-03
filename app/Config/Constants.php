@@ -94,6 +94,8 @@ define('EVENT_PRIORITY_NORMAL', 100);
 define('EVENT_PRIORITY_HIGH', 10);
 
 # API 
-defined('APP_URL')        or define('APP_URL', "http://ec2-3-144-3-52.us-east-2.compute.amazonaws.com:3000/api/"); // URL Base del sitio DEV
+//defined('APP_URL')        or define('APP_URL', "http://ec2-3-144-3-52.us-east-2.compute.amazonaws.com:3000/api/"); // DEV
+defined('APP_URL')        or define('APP_URL', "http://ec2-18-224-71-238.us-east-2.compute.amazonaws.com:3000/api/"); // Casino
+
 //defined('APP_URL')        or define('APP_URL', "https://admin.duelazo.com/api/"); // URL Base del sitio  
 //defined('APP_URL')        or define('APP_URL', "https://api.duelazo.com/api/"); // URL Base del sitio

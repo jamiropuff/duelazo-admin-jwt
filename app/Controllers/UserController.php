@@ -61,7 +61,9 @@ class UserController extends BaseController
                         'iat' => time(),   // Fecha/hora de emisión del token
                         'exp' => time() + 3600  // Fecha/hora de expiración del token (1 hora)
                     );
+                    // echo "payload: ".$payload;
                     $token_jwt = $jwt->encode($payload);
+                    // echo "token_jwt: ".$token_jwt;
 
                     // Generar la Session
                     $arr_session = array(
@@ -106,7 +108,7 @@ class UserController extends BaseController
         } catch (\Exception $e) {
             //exit($e->getMessage());
 
-            //echo $e->getMessage();
+            // echo $e->getMessage();
 
             $response = array(
                 'status' => 0,
@@ -118,6 +120,7 @@ class UserController extends BaseController
         }
 
         //$response->setContentType('application/json');
+        // echo "response: ".$response;
 
         return json_encode($response);
     }
