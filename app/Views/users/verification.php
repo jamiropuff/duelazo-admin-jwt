@@ -208,7 +208,7 @@
                       <div class="form-group">
                         <div class="row">
                           <div class="col-12 col-md-6">
-                            <label for="comprobante_domicilio">Comprobante de Domicilio <i id="circle_comprobante" class="fas fa-circle"></i></label><br>
+                            <label for="comprobante_domicilio">Comprobante Bancario <i id="circle_comprobante" class="fas fa-circle"></i></label><br>
                             <i class="far fa-file-image fa-2x cur-pointer" onclick="showDomicilio()"></i>
 
                             <input type="hidden" id="status_id_comprobante_de_domicilio">
