@@ -22,7 +22,7 @@
                                     <th>Nickname</th>
                                     <th>Nombre</th>
                                     <th>Usuario ID</th>
-                                    <th>Domicilio</th>
+                                    <th>Comp. Bancario</th>
                                     <th>ID</th>
                                     <th>CLABE</th>
                                     <th>CURP</th>
