@@ -264,8 +264,8 @@ class BracketsController extends BaseController
         $physical_awards = null;
 
         for($x=1;$x<=$total_awards;$x++){
-            $award = $this->request->getPost('award_'.$x);
-            $physical_award_id = $this->request->getPost('physical_award_id_'.$x);
+            $award = $this->request->getPost('award_add_'.$x);
+            $physical_award_id = $this->request->getPost('physical_award_add_id_'.$x);
 
             if(isset($physical_award_id) && $physical_award_id > 0) {
                 $physical_awards[] = array( 
