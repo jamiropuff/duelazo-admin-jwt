@@ -473,7 +473,7 @@ const listarBracketsMatches = () => {
                         body_matches += `
                         <tr>
                             <td class="text-center" style="padding: 0.4rem; ">
-                                <input type="checkbox" id="match_edit_id_${x}" name="match_edit_id_${x}" class="matches-add" value="${response_data.id}" >
+                                <input type="checkbox" id="match_id_${x}" name="match_id[${x}]" class="matches-add" value="${response_data.id}" >
                             </td>
                             <td style="padding: 0.4rem;" id="match_league_name_${response_data.id}">${response_data.league.name}</td>
                             <td style="padding: 0.4rem;" id="match_local_team_name_${response_data.id}">${response_data.local_team.name}</td>
